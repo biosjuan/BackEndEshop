@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 
 router.post(`/`, async (req, res) => {
     if(!mongoose.isValidObjectId(req.body.category)) {
-        return res.status(400).send('Invalid Product Id')
+        return res.status(400).send('Invalid category')
     }
     const category = await Category.findById(req.body.category);
 
